@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852716214EF40D006FE7CD /* RegisterViewController.swift */; };
+		7B852719214F159F006FE7CD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852718214F159F006FE7CD /* TableViewController.swift */; };
+		7B85271B215060B9006FE7CD /* MyCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */; };
+		7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */; };
+		7BDF8DEE2149E1620000C23A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */; };
+		7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6400C214951D500C3EC2A /* AppDelegate.swift */; };
+		7BE6400F214951D500C3EC2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6400E214951D500C3EC2A /* ViewController.swift */; };
+		7BE64012214951D500C3EC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE64010214951D500C3EC2A /* Main.storyboard */; };
+		7BE64014214951D500C3EC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BE64013214951D500C3EC2A /* Assets.xcassets */; };
+		7BE64017214951D500C3EC2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE64015214951D500C3EC2A /* LaunchScreen.storyboard */; };
+		856F5CE72537830374EF1446 /* Pods_ULink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 660A8D5F9D868132775E5EAF /* Pods_ULink.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09F1A8A0B06AEBE0ED0D6942 /* Pods-ULink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ULink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ULink/Pods-ULink.debug.xcconfig"; sourceTree = "<group>"; };
+		660A8D5F9D868132775E5EAF /* Pods_ULink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ULink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B852716214EF40D006FE7CD /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7B852718214F159F006FE7CD /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoursesViewController.swift; sourceTree = "<group>"; };
+		7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BE64009214951D500C3EC2A /* ULink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ULink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE6400C214951D500C3EC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7BE6400E214951D500C3EC2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BE64011214951D500C3EC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BE64013214951D500C3EC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7BE64016214951D500C3EC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7BE64018214951D500C3EC2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC3E4A8A304569D414320533 /* Pods-ULink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ULink.release.xcconfig"; path = "Pods/Target Support Files/Pods-ULink/Pods-ULink.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BE64006214951D500C3EC2A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				856F5CE72537830374EF1446 /* Pods_ULink.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BE64000214951D500C3EC2A = {
+			isa = PBXGroup;
+			children = (
+				7BE6400B214951D500C3EC2A /* ULink */,
+				7BE6400A214951D500C3EC2A /* Products */,
+				C532D743D3F7E21692EF150D /* Pods */,
+				F7347F65A2A19D479BA0D6D4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7BE6400A214951D500C3EC2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BE64009214951D500C3EC2A /* ULink.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BE6400B214951D500C3EC2A /* ULink */ = {
+			isa = PBXGroup;
+			children = (
+				7BE6400C214951D500C3EC2A /* AppDelegate.swift */,
+				7BE6400E214951D500C3EC2A /* ViewController.swift */,
+				7B852716214EF40D006FE7CD /* RegisterViewController.swift */,
+				7BE64010214951D500C3EC2A /* Main.storyboard */,
+				7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */,
+				7B852718214F159F006FE7CD /* TableViewController.swift */,
+				7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */,
+				7BE64013214951D500C3EC2A /* Assets.xcassets */,
+				7BE64015214951D500C3EC2A /* LaunchScreen.storyboard */,
+				7BE64018214951D500C3EC2A /* Info.plist */,
+				7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */,
+			);
+			path = ULink;
+			sourceTree = "<group>";
+		};
+		C532D743D3F7E21692EF150D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09F1A8A0B06AEBE0ED0D6942 /* Pods-ULink.debug.xcconfig */,
+				AC3E4A8A304569D414320533 /* Pods-ULink.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7347F65A2A19D479BA0D6D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				660A8D5F9D868132775E5EAF /* Pods_ULink.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BE64008214951D500C3EC2A /* ULink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BE6401B214951D500C3EC2A /* Build configuration list for PBXNativeTarget "ULink" */;
+			buildPhases = (
+				CB2DFDD48B498DA8C7282D0A /* [CP] Check Pods Manifest.lock */,
+				7BE64005214951D500C3EC2A /* Sources */,
+				7BE64006214951D500C3EC2A /* Frameworks */,
+				7BE64007214951D500C3EC2A /* Resources */,
+				013885959F11675C6D775339 /* [CP] Embed Pods Frameworks */,
+				6FE9143F030705DCEA4376C0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ULink;
+			productName = ULink;
+			productReference = 7BE64009214951D500C3EC2A /* ULink.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BE64001214951D500C3EC2A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Jakob Herlitz";
+				TargetAttributes = {
+					7BE64008214951D500C3EC2A = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = AHGXXPMXJ9;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7BE64004214951D500C3EC2A /* Build configuration list for PBXProject "ULink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7BE64000214951D500C3EC2A;
+			productRefGroup = 7BE6400A214951D500C3EC2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BE64008214951D500C3EC2A /* ULink */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BE64007214951D500C3EC2A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE64017214951D500C3EC2A /* LaunchScreen.storyboard in Resources */,
+				7BDF8DEE2149E1620000C23A /* GoogleService-Info.plist in Resources */,
+				7BE64014214951D500C3EC2A /* Assets.xcassets in Resources */,
+				7BE64012214951D500C3EC2A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		013885959F11675C6D775339 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ULink/Pods-ULink-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ULink/Pods-ULink-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE9143F030705DCEA4376C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ULink/Pods-ULink-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2DFDD48B498DA8C7282D0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ULink-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BE64005214951D500C3EC2A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE6400F214951D500C3EC2A /* ViewController.swift in Sources */,
+				7B85271B215060B9006FE7CD /* MyCoursesViewController.swift in Sources */,
+				7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */,
+				7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */,
+				7B852719214F159F006FE7CD /* TableViewController.swift in Sources */,
+				7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7BE64010214951D500C3EC2A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE64011214951D500C3EC2A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7BE64015214951D500C3EC2A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE64016214951D500C3EC2A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7BE64019214951D500C3EC2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7BE6401A214951D500C3EC2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7BE6401C214951D500C3EC2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09F1A8A0B06AEBE0ED0D6942 /* Pods-ULink.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AHGXXPMXJ9;
+				INFOPLIST_FILE = ULink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Koob.ULink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7BE6401D214951D500C3EC2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3E4A8A304569D414320533 /* Pods-ULink.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = AHGXXPMXJ9;
+				INFOPLIST_FILE = ULink/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Koob.ULink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BE64004214951D500C3EC2A /* Build configuration list for PBXProject "ULink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE64019214951D500C3EC2A /* Debug */,
+				7BE6401A214951D500C3EC2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BE6401B214951D500C3EC2A /* Build configuration list for PBXNativeTarget "ULink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE6401C214951D500C3EC2A /* Debug */,
+				7BE6401D214951D500C3EC2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BE64001214951D500C3EC2A /* Project object */;
+}
