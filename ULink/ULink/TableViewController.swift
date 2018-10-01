@@ -17,15 +17,18 @@ class courseCell: UITableViewCell{
     var courseNumber = String()
     
     @IBOutlet var button: UIButton!
-    var info = [String: String]()
+    var info = [String: Any]()
     
     @IBAction func displayData(_ sender: UIButton!){
-        let info_string = "Name: \(info["course_name"]!) \n Days: \(info["days"]!) \n Start Time: \(info["start_time"]!) \n End Time: \(info["end_time"]!) \n Location: \(info["location"]!) "
+        let info_string = "Name: \(info["course_name"]!) \n Days: \((info["days"]! as! [String]).joined(separator: " ")) \n Start Time: \(info["start_time"]!) \n End Time: \(info["end_time"]!) \n Location: \(info["location"]!) "
         
         displayAlertMessage(msg: info_string)
-        
+        if let currentIndex = parentView.tableView.indexPathForSelectedRow {
+            parentView.table.delegate?.tableView!(parentView.table, didDeselectRowAt: currentIndex)
+        }
         let selectedIndex = IndexPath(row: sender.tag, section: 0)
-        parentView.tableView.selectRow(at: selectedIndex, animated: true, scrollPosition: .none)
+        parentView.tableView.selectRow(at: selectedIndex, animated: false, scrollPosition: .none)
+        parentView.table.delegate?.tableView!(parentView.table, didSelectRowAt: selectedIndex)
     }
     
     func displayAlertMessage(msg: String){
@@ -121,7 +124,17 @@ class TableViewController: UITableViewController {
         return myArray.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = table.cellForRow(at: indexPath) as! courseCell
+            cell.textLabel?.textColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
+            cell.button.tintColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
+    }
     
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = table.cellForRow(at: indexPath) as! courseCell
+            cell.textLabel?.textColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
+            cell.button.tintColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! courseCell
         
@@ -130,7 +143,7 @@ class TableViewController: UITableViewController {
         cell.backgroundColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
         cell.addSubview(cell.button)
         cell.courseNumber = myArray[indexPath.item]
-        cell.info = dictionary[myArray[indexPath.item]] as! [String : String]
+        cell.info = dictionary[myArray[indexPath.item]] as! [String : Any]
         cell.parentView = self
         cell.button.tag = indexPath.row
 

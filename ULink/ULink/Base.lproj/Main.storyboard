@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="svd-uu-HQz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -282,12 +282,52 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="48.799999999999997" y="713.79310344827593"/>
+            <point key="canvasLocation" x="49" y="741"/>
+        </scene>
+        <!--My Schedule-->
+        <scene sceneID="tta-AR-s9c">
+            <objects>
+                <viewController storyboardIdentifier="mySchedule" title="My Schedule" id="IBJ-5S-w6k" customClass="ScheduleViewController" customModule="ULink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="w5T-NS-nW9"/>
+                        <viewControllerLayoutGuide type="bottom" id="nw5-Nv-0fe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Id1-hE-Epm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="XGw-5A-Uee">
+                                <rect key="frame" x="168" y="605" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="h8J-jt-dHm"/>
+                                </constraints>
+                            </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bha-nN-sAS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bha-nN-sAS" firstAttribute="leading" secondItem="Id1-hE-Epm" secondAttribute="leading" id="3i7-Tn-VVH"/>
+                            <constraint firstItem="nw5-Nv-0fe" firstAttribute="top" secondItem="XGw-5A-Uee" secondAttribute="bottom" constant="25" id="BVN-GQ-fGM"/>
+                            <constraint firstItem="XGw-5A-Uee" firstAttribute="centerX" secondItem="bha-nN-sAS" secondAttribute="centerX" id="C1X-TJ-YAM"/>
+                            <constraint firstItem="bha-nN-sAS" firstAttribute="bottom" secondItem="nw5-Nv-0fe" secondAttribute="top" id="OgC-9q-Ph8"/>
+                            <constraint firstItem="XGw-5A-Uee" firstAttribute="centerX" secondItem="Id1-hE-Epm" secondAttribute="centerX" id="XeR-6c-jdw"/>
+                            <constraint firstItem="bha-nN-sAS" firstAttribute="top" secondItem="Id1-hE-Epm" secondAttribute="top" id="nD8-pg-QiB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="XGw-5A-Uee" id="ajI-ki-I4h"/>
+                        <outlet property="scrollView" destination="bha-nN-sAS" id="AeQ-tv-c0n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gz-EC-Cj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1736.8" y="801.94902548725645"/>
         </scene>
         <!--My Courses-->
         <scene sceneID="PAK-Qf-qX9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gS8-1Z-9jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="myCourses" title="My Courses" id="gQv-WN-PhR" customClass="MyCoursesViewController" customModule="ULink" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="syz-rn-KPl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -322,8 +362,9 @@
                         <outlet property="table" destination="syz-rn-KPl" id="fYv-uC-XSN"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gS8-1Z-9jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792" y="722"/>
+            <point key="canvasLocation" x="2598" y="802"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="w1h-J0-GEq">
@@ -339,7 +380,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azd-SE-vBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="-666"/>
+            <point key="canvasLocation" x="865" y="36"/>
         </scene>
         <!--ULink Home-->
         <scene sceneID="DJG-gc-amF">
@@ -353,6 +394,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-jd-5Um">
+                                <rect key="frame" x="115" y="72" width="146" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="uC2-7a-gKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY1-RL-J5q">
                                 <rect key="frame" x="16" y="223" width="343" height="110"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -374,15 +424,17 @@
                                     <action selector="presentMyCourses:" destination="qqT-F8-QNd" eventType="touchUpInside" id="MA4-3V-Fis"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYt-jd-5Um">
-                                <rect key="frame" x="115" y="72" width="146" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="uC2-7a-gKe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcr-Hf-sTv">
+                                <rect key="frame" x="16" y="459" width="343" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="My Schedule">
+                                    <color key="titleColor" red="0.53333333329999999" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentMySchedule" destination="qqT-F8-QNd" eventType="touchUpInside" id="URK-xA-Wie"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.53333333329999999" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -402,11 +454,12 @@
                         <outlet property="myCoursesButton" destination="ykx-f3-fdi" id="Ps9-jQ-Q4j"/>
                         <segue destination="gQv-WN-PhR" kind="show" id="VsG-di-NnE"/>
                         <segue destination="VU0-eN-w5a" kind="show" id="IT8-JN-Bqz"/>
+                        <segue destination="IBJ-5S-w6k" kind="show" id="X7M-ys-ZTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tL-8Y-Onf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.60000000000002" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1736.8" y="36.431784107946029"/>
         </scene>
         <!--Course Listings-->
         <scene sceneID="Rry-sD-Eu7">
@@ -454,7 +507,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjW-52-x3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2598" y="37"/>
         </scene>
     </scenes>
     <resources>

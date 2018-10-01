@@ -10,6 +10,9 @@
 		7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852716214EF40D006FE7CD /* RegisterViewController.swift */; };
 		7B852719214F159F006FE7CD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852718214F159F006FE7CD /* TableViewController.swift */; };
 		7B85271B215060B9006FE7CD /* MyCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */; };
+		7B85271D21528806006FE7CD /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B85271C21528806006FE7CD /* ScheduleViewController.swift */; };
+		7B85271F21528886006FE7CD /* day.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B85271E21528886006FE7CD /* day.xib */; };
+		7B852721215288B0006FE7CD /* day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852720215288B0006FE7CD /* day.swift */; };
 		7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */; };
 		7BDF8DEE2149E1620000C23A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */; };
 		7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6400C214951D500C3EC2A /* AppDelegate.swift */; };
@@ -26,6 +29,9 @@
 		7B852716214EF40D006FE7CD /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B852718214F159F006FE7CD /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCoursesViewController.swift; sourceTree = "<group>"; };
+		7B85271C21528806006FE7CD /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		7B85271E21528886006FE7CD /* day.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = day.xib; sourceTree = "<group>"; };
+		7B852720215288B0006FE7CD /* day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day.swift; sourceTree = "<group>"; };
 		7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BE64009214951D500C3EC2A /* ULink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ULink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +81,10 @@
 				7BE6400E214951D500C3EC2A /* ViewController.swift */,
 				7B852716214EF40D006FE7CD /* RegisterViewController.swift */,
 				7BE64010214951D500C3EC2A /* Main.storyboard */,
+				7B85271E21528886006FE7CD /* day.xib */,
+				7B852720215288B0006FE7CD /* day.swift */,
 				7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */,
+				7B85271C21528806006FE7CD /* ScheduleViewController.swift */,
 				7B852718214F159F006FE7CD /* TableViewController.swift */,
 				7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */,
 				7BE64013214951D500C3EC2A /* Assets.xcassets */,
@@ -170,6 +179,7 @@
 				7BDF8DEE2149E1620000C23A /* GoogleService-Info.plist in Resources */,
 				7BE64014214951D500C3EC2A /* Assets.xcassets in Resources */,
 				7BE64012214951D500C3EC2A /* Main.storyboard in Resources */,
+				7B85271F21528886006FE7CD /* day.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,9 +252,11 @@
 			files = (
 				7BE6400F214951D500C3EC2A /* ViewController.swift in Sources */,
 				7B85271B215060B9006FE7CD /* MyCoursesViewController.swift in Sources */,
+				7B852721215288B0006FE7CD /* day.swift in Sources */,
 				7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */,
 				7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */,
 				7B852719214F159F006FE7CD /* TableViewController.swift in Sources */,
+				7B85271D21528806006FE7CD /* ScheduleViewController.swift in Sources */,
 				7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

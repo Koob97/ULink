@@ -12,10 +12,43 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var greeting: UILabel!
+    
+    //initialize variables for views - these are initialized here so we can set data
+    // and then present the views so that there is no lag with data showing up
     var courseListingVC: TableViewController!
     var myCoursesVC: MyCoursesViewController!
-    var dataDict = [String: Any]()
-    var courseDict = [String: Any]()
+    var myScheduleVC: ScheduleViewController!
+    
+    
+    var dataDict = [String: Any]()  // entire grab of data
+    var courseDict = [String: Any]()  // for course listings page
+    
+    @IBAction func presentMySchedule(){
+        var targetVC = ScheduleViewController()
+        
+        if self.myScheduleVC != nil {
+            targetVC = self.myScheduleVC
+        }
+        else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            targetVC = storyboard.instantiateViewController(withIdentifier: "mySchedule") as! ScheduleViewController
+            self.myScheduleVC = targetVC
+            
+            let userID = Auth.auth().currentUser?.uid
+            let users = dataDict["users"] as! [String: Any]
+            let user = users[userID!] as! [String: Any]
+            
+            if let courses = user["courses"] as? [String]{
+                self.myScheduleVC.courseArray = courses.sorted(by: <)
+            }
+            else {
+                self.myScheduleVC.courseArray = []
+            }
+            self.myScheduleVC.parentView = self
+        }
+        
+        self.navigationController!.pushViewController(self.myScheduleVC, animated: true)
+    }
     
     @IBOutlet weak var myCoursesButton: UIButton!
     func update(){
@@ -25,6 +58,7 @@ class HomeViewController: UIViewController {
             let user = users[userID!] as! [String: Any]
             let courses = user["courses"] as! [String]
             self.myCoursesVC.courseArray = courses.sorted(by: <)
+            self.myScheduleVC.courseArray = courses.sorted(by: <) //fails if myScheduleVC hasnt been created yet
             self.myCoursesVC.table.reloadData()
         })
     }
@@ -34,7 +68,7 @@ class HomeViewController: UIViewController {
         var ref: DatabaseReference!
         ref = Database.database().reference()
         //Read in ALL firebase data
-        
+    
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
             if !snapshot.exists(){
                 return
