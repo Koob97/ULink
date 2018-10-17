@@ -9,19 +9,7 @@
 import UIKit
 
 class timeSlot: UITableViewCell{
-    var cellLabel: UILabel!
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        cellLabel = UILabel(frame: CGRect(x: 0, y:-50, width: 100, height: 100))
-//        cellLabel.textColor = UIColor.black
-//        
-//        addSubview(cellLabel)
-    }
 }
 
 class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -55,7 +43,7 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: "timeSlot", for: indexPath) as! timeSlot
-    
+
         var courses: [String] = []
         var course: String = ""
         switch tableView.tag{
@@ -73,8 +61,9 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
         default:
             print("default case")
         }
-        
-        cell.textLabel?.text = course
+        let cellLabel = UILabel(frame: CGRect(x: 10.0, y: 4.0, width: 150.0, height: 30.0))
+        cellLabel.text = course
+        cell.addSubview(cellLabel)
         return cell
     }
     
@@ -130,6 +119,7 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
         
         let dayTable = UITableView()
         dayTable.frame = CGRect(x: 75, y:150, width: 250, height: 450)
+        //dayTable.separatorStyle = .none
         
         dayTable.delegate = self
         dayTable.dataSource = self
