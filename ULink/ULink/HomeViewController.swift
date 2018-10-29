@@ -57,9 +57,15 @@ class HomeViewController: UIViewController {
             let users = self.dataDict["users"] as! [String: Any]
             let user = users[userID!] as! [String: Any]
             let courses = user["courses"] as! [String]
-            self.myCoursesVC.courseArray = courses.sorted(by: <)
-            self.myScheduleVC.courseArray = courses.sorted(by: <) //fails if myScheduleVC hasnt been created yet
-            self.myCoursesVC.table.reloadData()
+            if (self.myCoursesVC) != nil{
+                self.myCoursesVC.courseArray = courses.sorted(by: <)
+                self.myCoursesVC.table.reloadData()
+            }
+            
+            if(self.myScheduleVC) != nil {
+                self.myScheduleVC.courseArray = courses.sorted(by: <)
+            }
+        
         })
     }
     
