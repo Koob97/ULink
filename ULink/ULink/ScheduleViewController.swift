@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class timeSlot: UITableViewCell{
     
@@ -21,6 +22,8 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
         "Fri": []
     ]
     
+    var classLengthsAndStart: [String: [Int]] = [:]
+    
     var parentView: HomeViewController!
     var courseArray: [String] = [String]()
     
@@ -32,13 +35,30 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
         "Thu": [],
         "Fri": []
         ]
+        classLengthsAndStart = [:]
         let courseDict = parentView.courseDict
         for course in courseArray {
             let courseInfo = courseDict[course] as! [String: Any]
             for day in courseInfo["days"] as! [String] {
                 data[day]?.append(course)
             }
+            
+            let startTime = courseInfo["start_time"] as! String
+            let endTime = courseInfo["end_time"] as! String
+            let classLength = timeToMinutes(string: endTime) - timeToMinutes(string: startTime)
+            
+            //start time is subtracted by 8 hours because the schedule starts at 8:00 AM
+            print(course)
+            print(timeToMinutes(string: startTime))
+            classLengthsAndStart[course] = [timeToMinutes(string: startTime) - 60*8, classLength]
         }
+    }
+    
+    func timeToMinutes(string: String) -> Int{
+        let times = string.components(separatedBy: ":")
+        let secondHalf = times[1].components(separatedBy: " ")
+        let flag = secondHalf[1]=="AM" || times[0]=="12"
+        return 60*Int(times[0])! + Int(secondHalf[0])! + (flag ? 0:12*60)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -139,11 +159,26 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate, UITableVie
         var newLabel: UILabel
         var count = 0
         for time in times {
-           
             newLabel = UILabel(frame: CGRect(x: 10, y: dayTable.frame.minY + CGFloat(count)*dayTable.frame.height/11, width: 100, height: dayTable.frame.height/11))
             newLabel.text = time
             day.addSubview(newLabel)
             count = count + 1
+        }
+        let index = dayName.index(dayName.startIndex, offsetBy: 3)
+        let abbrev = String(dayName.substring(to: index))
+    
+        var button: UIButton
+        count = 0
+        for course in data[abbrev!]! {
+            let height = Int((Float((classLengthsAndStart[course]?[1])!)/Float(60*11))*450)
+            let startOffset = Int((Float((classLengthsAndStart[course]?[0])!)/Float(60*11))*450)
+            
+            let y = startOffset + Int(dayTable.frame.minY)
+            
+            button = UIButton(frame: CGRect(x: 90, y: Int(y), width: 250, height: Int(height)))
+            button.backgroundColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
+            button.setTitle(course, for: .normal)
+            day.addSubview(button)
         }
         return day
     }
