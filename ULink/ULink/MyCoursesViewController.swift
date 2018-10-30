@@ -22,7 +22,6 @@ class MyCoursesViewController: UITableViewController {
     
     var courseArray = [String](){
         didSet{
-            print("SET")
             if(table != nil){
                 table.reloadData()
             }
@@ -38,17 +37,19 @@ class MyCoursesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        print("loaded!")
+        let tabController = tabBarController as! TabController
+        courseArray = tabController.courseArray
+        let view1: UIView = UIView.init(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:100))
+        let label: UILabel = UILabel.init(frame: CGRect(x:0, y:0, width: self.view.frame.width, height:100))
+        label.text = "Your Courses"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 30.0)
+        view1.addSubview(label)
+        self.tableView.tableHeaderView = view1
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
@@ -66,8 +67,8 @@ class MyCoursesViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coursecell", for: indexPath) as! myCourseCell
         
         cell.textLabel?.text = "CMPSCI " + courseArray[indexPath.item]
-        cell.textLabel?.textColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
-        cell.backgroundColor = UIColor(colorLiteralRed: 0.533333, green: 0.1098, blue: 0.1098, alpha: 1)
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = UIColor(colorLiteralRed: 0.533333, green: 0.1098, blue: 0.1098, alpha: 0.0)
         
         cell.addSubview(cell.button)
         cell.parentView = self

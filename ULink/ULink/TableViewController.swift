@@ -52,10 +52,8 @@ class courseCell: UITableViewCell{
     }
     
     func addCourseToUser(uuid: String){
-        print("Made it into add course to user")
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        print(uuid)
         var courses = [String]()
         ref.child("users").child(uuid).observeSingleEvent(of: .value, with: {(snapshot) in
                 let value = snapshot.value as? NSDictionary
@@ -68,7 +66,7 @@ class courseCell: UITableViewCell{
                 }
             
                 ref.child("users/\(uuid)/courses").setValue(courses, withCompletionBlock: { (err, dbRef) in
-                    self.parentView.homeView.update()
+                    self.parentView.tabController.update()
                 })
         
         })
@@ -80,6 +78,7 @@ class TableViewController: UITableViewController {
     
     let userID = Auth.auth().currentUser?.uid
     var myArray = [String]()
+    var tabController: TabController!
     
     @IBOutlet var table: UITableView!
     
@@ -94,23 +93,22 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        tabController = tabBarController as! TabController
+        dictionary = tabController.courseDict
+        let view1: UIView = UIView.init(frame: CGRect(x:0, y:0, width:self.view.frame.width, height:100))
+        let label: UILabel = UILabel.init(frame: CGRect(x:0, y:0, width: self.view.frame.width, height:100))
+        label.text = "Course Listings"
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 30.0)
+        view1.addSubview(label)
+        self.tableView.tableHeaderView = view1
     }
     
     override func viewDidAppear(_ animated: Bool) {
         table.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Table view data source
     
@@ -126,21 +124,21 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = table.cellForRow(at: indexPath) as! courseCell
-            cell.textLabel?.textColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
-            cell.button.tintColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
+            cell.textLabel?.textColor = .black
+            cell.button.tintColor = .black
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let cell = table.cellForRow(at: indexPath) as! courseCell
-            cell.textLabel?.textColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
-            cell.button.tintColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
+            cell.textLabel?.textColor = .white
+            cell.button.tintColor = .white
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customcell", for: indexPath) as! courseCell
         
         cell.textLabel?.text = "CMPSCI " + myArray[indexPath.item]
-        cell.textLabel?.textColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
-        cell.backgroundColor = UIColor(colorLiteralRed: 0.53, green: 0.11, blue: 0.11, alpha: 1)
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 0.0)
         cell.addSubview(cell.button)
         cell.courseNumber = myArray[indexPath.item]
         cell.info = dictionary[myArray[indexPath.item]] as! [String : Any]
