@@ -499,17 +499,28 @@
                                 <color key="textColor" red="0.99519230769230771" green="1" blue="0.99038461538461542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfE-Ac-P7g">
+                                <rect key="frame" x="151" y="370" width="73" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="usl-Ya-m0E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="JYt-jd-5Um" firstAttribute="top" secondItem="4mQ-AX-QCy" secondAttribute="bottom" constant="8" symbolic="YES" id="0PU-8O-sRT"/>
                             <constraint firstItem="D40-q8-Uc4" firstAttribute="centerX" secondItem="0vP-mB-eL6" secondAttribute="centerX" id="3eQ-lV-1sk"/>
                             <constraint firstItem="XsO-OG-pIP" firstAttribute="leading" secondItem="qJP-39-Uwc" secondAttribute="trailing" constant="64" id="Aq1-4T-osE"/>
+                            <constraint firstItem="jfE-Ac-P7g" firstAttribute="centerX" secondItem="0vP-mB-eL6" secondAttribute="centerX" id="HtL-n4-urn"/>
                             <constraint firstItem="D40-q8-Uc4" firstAttribute="top" secondItem="JYt-jd-5Um" secondAttribute="bottom" constant="8" id="L1d-aA-32g"/>
                             <constraint firstItem="JYt-jd-5Um" firstAttribute="centerX" secondItem="0vP-mB-eL6" secondAttribute="centerX" id="UUg-ao-hiG"/>
                             <constraint firstItem="qJP-39-Uwc" firstAttribute="top" secondItem="D40-q8-Uc4" secondAttribute="bottom" constant="44" id="Ww0-gq-uzt"/>
                             <constraint firstItem="qJP-39-Uwc" firstAttribute="leading" secondItem="0vP-mB-eL6" secondAttribute="leadingMargin" constant="84" id="k67-5M-P0m"/>
                             <constraint firstItem="qJP-39-Uwc" firstAttribute="top" secondItem="XsO-OG-pIP" secondAttribute="top" id="nDf-au-yBX"/>
+                            <constraint firstItem="jfE-Ac-P7g" firstAttribute="top" secondItem="qJP-39-Uwc" secondAttribute="bottom" constant="65" id="yzd-98-S2A"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="wZS-5E-uLc"/>
@@ -517,6 +528,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="uCW-y5-Vbz"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="jfE-Ac-P7g" id="Clv-kL-6M8"/>
                         <outlet property="greeting" destination="JYt-jd-5Um" id="mhW-7c-uTv"/>
                         <segue destination="gQv-WN-PhR" kind="show" id="VsG-di-NnE"/>
                         <segue destination="VU0-eN-w5a" kind="show" id="IT8-JN-Bqz"/>
@@ -581,8 +593,8 @@
         <image name="transparentLink" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9GR-5x-smb"/>
-        <segue reference="hU2-uF-EqV"/>
+        <segue reference="X7M-ys-ZTB"/>
         <segue reference="VsG-di-NnE"/>
+        <segue reference="IT8-JN-Bqz"/>
     </inferredMetricsTieBreakers>
 </document>

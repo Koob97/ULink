@@ -45,9 +45,6 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = days.count
         pageControl.currentPage = 0
         view.bringSubview(toFront: pageControl)
-        
-        let dictionary = tabController.courseDict
-        
     }
     
     @IBAction func close(_ sender: AnyObject) {
@@ -175,14 +172,14 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
         dayLabel.font = UIFont.systemFont(ofSize: 30.0)
         day.addSubview(dayLabel)
         
-        let minY = 100
+        let minY = 125
         let frameHeight = 450
         let times = ["8:00", "9:00", "10:00", "11:00", "12:00", "1:00",
                      "2:00", "3:00", "4:00", "5:00", "6:00"]
         var newLabel: UILabel
         var count = 0
         for time in times {
-            newLabel = UILabel(frame: CGRect(x: 10, y: Int(CGFloat(minY) + CGFloat(count)*CGFloat(frameHeight/11)), width: 100, height: frameHeight/11))
+            newLabel = UILabel(frame: CGRect(x: 10, y: Int(CGFloat(minY) + CGFloat(count)*CGFloat(frameHeight/11) - CGFloat(10)), width: 100, height: frameHeight/11))
             newLabel.text = time
             newLabel.textColor = .white
             day.addSubview(newLabel)

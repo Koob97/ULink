@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         emailField.delegate = self
         passwordField.delegate = self
-       
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
     //close if somewhere outside of the keyboard is tapped
@@ -61,15 +61,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else {
             displayAlertMessage(msg: "Please enter both your email and your password")
         }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        //let receiver = segue.destination as! HomeViewController
-        
-        /*if let id = userid{
-           receiver.userID = id
-        }*/
-        
     }
     
     
