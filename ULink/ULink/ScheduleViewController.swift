@@ -205,6 +205,7 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
             button.tag = count
             button.addTarget(self, action: #selector(togglePopUp), for: .touchUpInside)
             day.addSubview(button)
+            count += 1
         }
         return day
     }
