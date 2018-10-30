@@ -45,9 +45,13 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
         pageControl.numberOfPages = days.count
         pageControl.currentPage = 0
         view.bringSubview(toFront: pageControl)
+        
+        let dictionary = tabController.courseDict
+        
     }
-    @IBAction func close(_ sender: Any) {
-        togglePopUp()
+    
+    @IBAction func close(_ sender: AnyObject) {
+        togglePopUp(sender: sender)
     }
     
     func animateIn(){
@@ -63,9 +67,27 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
             self.courseDetail.transform = CGAffineTransform.identity
         }
     }
+    @IBOutlet weak var popUpText: UITextView!
     
-    func togglePopUp(){
+    @IBAction func togglePopUp(sender: AnyObject){
         if(visualEffectView.effect == nil){
+            let classNum = sender.tag
+            let dayNum = pageControl.currentPage
+            var day = ""
+            switch(dayNum){
+                case 0: day = "Mon"
+            case 1: day = "Tue"
+            case 2: day = "Wed"
+            case 3: day = "Thu"
+            case 4: day = "Fri"
+            default: print("error in page control number")
+            }
+            let className = data[day]?[classNum!]
+            
+            let tabController = tabBarController as! TabController
+            let info = tabController.courseDict[className!] as! [String: Any]
+            let info_string = "Name: \(info["course_name"]!) \n Days: \((info["days"]! as! [String]).joined(separator: " ")) \n Start Time: \(info["start_time"]!) \n End Time: \(info["end_time"]!) \n Location: \(info["location"]!) "
+            popUpText.text = info_string
             animateIn()
         }
         else {
@@ -112,6 +134,10 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
             //start time is subtracted by 8 hours because the schedule starts at 8:00 AM
             classLengthsAndStart[course] = [timeToMinutes(string: startTime) - 60*8, classLength]
         }
+        
+        //replace old day views in scroll view with new ones
+        let newDays = createDays()
+        setupDayScrollView(days: newDays)
     }
     
     func timeToMinutes(string: String) -> Int{
@@ -124,12 +150,12 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
 
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var days: [day] = []
+    var days: [UIView] = []
     
     @IBOutlet weak var pageControl: UIPageControl!
     
     
-    func createDays() -> [day] {
+    func createDays() -> [UIView] {
         let monday = generateDayView(dayName: "Monday")
         let tuesday = generateDayView(dayName: "Tuesday")
         let wednesday = generateDayView(dayName: "Wednesday")
@@ -139,29 +165,17 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
         return [monday, tuesday, wednesday, thursday, friday]
     }
     
-    func generateDayView(dayName: String) -> day {
-        let day: day = Bundle.main.loadNibNamed("day", owner: self, options: nil)?.first as! day
-        day.dayLabel.text = dayName
+    func generateDayView(dayName: String) -> UIView {
+        let day = UIView(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: view.frame.size.height))
+        day.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1)
+        let dayLabel = UILabel(frame: CGRect(x: 0, y:0, width: view.frame.size.width, height: 100))
+        dayLabel.text = dayName
+        dayLabel.textAlignment = .center
+        dayLabel.textColor = .white
+        dayLabel.font = UIFont.systemFont(ofSize: 30.0)
+        day.addSubview(dayLabel)
         
-        /*
-        let dayTable = UITableView()
-        //dayTable.frame = CGRect(x: 75, y:150, width: 250, height: 450)
-        //dayTable.separatorStyle = .none
-        
-        dayTable.delegate = self
-        dayTable.dataSource = self
-        dayTable.register(timeSlot.self, forCellReuseIdentifier: "timeSlot")
-        switch dayName {
-            case "Monday": dayTable.tag = 1
-            case "Tuesday": dayTable.tag = 2
-            case "Wednesday": dayTable.tag = 3
-            case "Thursday": dayTable.tag = 4
-            case "Friday": dayTable.tag = 5
-        default:
-            print("invalid day so no tag assigned")
-        }
-        day.addSubview(dayTable)*/
-        let minY = 150
+        let minY = 100
         let frameHeight = 450
         let times = ["8:00", "9:00", "10:00", "11:00", "12:00", "1:00",
                      "2:00", "3:00", "4:00", "5:00", "6:00"]
@@ -188,19 +202,20 @@ class ScheduleViewController: UIViewController, UIScrollViewDelegate {
             button = UIButton(frame: CGRect(x: 90, y: Int(y), width: 250, height: Int(height)))
             button.backgroundColor = UIColor(colorLiteralRed: Float(arc4random()%255)/Float(255), green: Float(arc4random()%255)/Float(255), blue: Float(arc4random()%255)/Float(255), alpha: 1)
             button.setTitle(course, for: .normal)
+            button.tag = count
             button.addTarget(self, action: #selector(togglePopUp), for: .touchUpInside)
             day.addSubview(button)
         }
         return day
     }
     
-    func setupDayScrollView(days : [day]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(days.count), height: view.frame.height)
+    func setupDayScrollView(days : [UIView]) {
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 100)
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(days.count), height: view.frame.height - 100)
         scrollView.isPagingEnabled = true
         
         for i in 0 ..< days.count {
-            days[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            days[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height - 100)
             scrollView.addSubview(days[i])
         }
     }

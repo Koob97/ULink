@@ -58,6 +58,7 @@ class TabController: UITabBarController {
                 switch(controller){
                 case is MyCoursesViewController: (controller as! MyCoursesViewController).courseArray = self.courseArray
                 case is ScheduleViewController: (controller as! ScheduleViewController).courseArray = self.courseArray
+                    (controller as! ScheduleViewController).updateData(controller: self)
                 default: print("default")
                 }
             }
