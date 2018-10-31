@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let date = Date()
         let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
         formatter.locale = Locale(identifier: "en_US")
         let result = formatter.string(from: date)
         dateLabel.text = result
