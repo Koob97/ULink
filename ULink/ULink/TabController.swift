@@ -15,10 +15,13 @@ class TabController: UITabBarController {
     var dataDict = [String: Any]()  // entire grab of data
     var courseDict = [String: Any]()  // for course listings page
     var courseArray = [String]() // for schedule and my courses
-    
+    var UUID: String!
     var username: String! // username to be referenced in the views
     
     override func viewDidLoad() {
+        UIApplication.shared.statusBarStyle = .lightContent
+        view.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1.0)
+        UUID = UserDefaults.standard.value(forKey: "currentUser") as! String
         super.viewDidLoad()
         getAllData(completion: {
             // get the courses for the user
@@ -30,12 +33,11 @@ class TabController: UITabBarController {
             }
             return
         })
-        let userID = Auth.auth().currentUser?.uid
         var ref: DatabaseReference!
         ref = Database.database().reference()
         
         // grab the username
-        if let receivedText = userID{
+        if let receivedText = UUID{
             ref.child("users").child(receivedText).observeSingleEvent(of: .value, with: {(snapshot) in
                 let value = snapshot.value as? NSDictionary
                 self.username = value?["username"] as? String ?? ""
@@ -46,7 +48,7 @@ class TabController: UITabBarController {
     func update(){
         getAllData(completion: {
             // get the courses for the user
-            let userID = Auth.auth().currentUser?.uid
+            let userID = self.UUID
             let users = self.dataDict["users"] as! [String: Any]
             let user = users[userID!] as! [String: Any]
             if let courses = user["courses"] as? [String]{

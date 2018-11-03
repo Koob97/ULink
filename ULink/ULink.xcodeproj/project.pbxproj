@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B2284AE218E057A00FEB867 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2284AD218E057A00FEB867 /* FriendsViewController.swift */; };
 		7B65F88B2187A3A700854E56 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65F88A2187A3A700854E56 /* TabController.swift */; };
 		7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852716214EF40D006FE7CD /* RegisterViewController.swift */; };
 		7B852719214F159F006FE7CD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852718214F159F006FE7CD /* TableViewController.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		09F1A8A0B06AEBE0ED0D6942 /* Pods-ULink.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ULink.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ULink/Pods-ULink.debug.xcconfig"; sourceTree = "<group>"; };
 		660A8D5F9D868132775E5EAF /* Pods_ULink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ULink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B2284AD218E057A00FEB867 /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		7B65F88A2187A3A700854E56 /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		7B852716214EF40D006FE7CD /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B852718214F159F006FE7CD /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				7BE6400E214951D500C3EC2A /* ViewController.swift */,
 				7B852716214EF40D006FE7CD /* RegisterViewController.swift */,
 				7BE64010214951D500C3EC2A /* Main.storyboard */,
+				7B2284AD218E057A00FEB867 /* FriendsViewController.swift */,
 				7B85271E21528886006FE7CD /* day.xib */,
 				7B852720215288B0006FE7CD /* day.swift */,
 				7B85271A215060B9006FE7CD /* MyCoursesViewController.swift */,
@@ -259,6 +262,7 @@
 				7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */,
 				7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */,
 				7B852719214F159F006FE7CD /* TableViewController.swift in Sources */,
+				7B2284AE218E057A00FEB867 /* FriendsViewController.swift in Sources */,
 				7B85271D21528806006FE7CD /* ScheduleViewController.swift in Sources */,
 				7B65F88B2187A3A700854E56 /* TabController.swift in Sources */,
 				7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */,

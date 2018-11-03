@@ -18,6 +18,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         emailField.delegate = self
         passwordField.delegate = self
         UIApplication.shared.statusBarStyle = .lightContent
+        view.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1.0)
+        if(isLoggedIn()){
+            performSegue(withIdentifier: "segueToHome", sender: self)
+        }
+    }
+    
+    func isLoggedIn() -> Bool {
+        print(UserDefaults.standard.bool(forKey: "isLoggedIn"))
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
     
     //close if somewhere outside of the keyboard is tapped
@@ -49,6 +58,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().signIn(withEmail: email!, password: password!, completion: {
                 (user, err) in
                 if(user != nil){
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    let uuid = Auth.auth().currentUser?.uid
+                    UserDefaults.standard.set(uuid, forKey: "currentUser")
+                    UserDefaults.standard.synchronize()
                 self.performSegue(withIdentifier: "segueToHome", sender: sender)
                 }
                 else {

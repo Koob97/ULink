@@ -14,6 +14,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1.0)
         registerEmail.delegate = self
         registerPassword1.delegate = self
         registerPassword2.delegate = self
