@@ -21,11 +21,13 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         //picker.setValue(UIColor.white, forKeyPath: "textColor")
         let tabController = tabBarController as! TabController
         let users = tabController.dataDict["users"] as! [String: [String: Any]]
-        var friendsList = users[tabController.UUID]?["friends"] as! [String]
-        friendsList = friendsList.sorted()
-        for friend in friendsList {
-            let username = users[friend]?["username"] as! String
-            friendsNames.append(username)
+        var friendsList = users[tabController.UUID]?["friends"]
+        if(friendsList != nil){
+            friendsList = (friendsList as! [String]).sorted()
+            for friend in friendsList as! [String]{
+                let username = users[friend]?["username"] as! String
+                friendsNames.append(username)
+            }
         }
     }
     
