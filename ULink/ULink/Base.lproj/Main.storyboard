@@ -633,13 +633,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-nk-iOe">
-                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-nk-iOe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="0.0" colorSpace="calibratedRGB"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aoo-nk-iOe" secondAttribute="trailing" id="5Zp-5J-F7D"/>
+                            <constraint firstItem="aoo-nk-iOe" firstAttribute="top" secondItem="qRq-iP-B3q" secondAttribute="top" id="FSl-fk-znW"/>
+                            <constraint firstItem="aoo-nk-iOe" firstAttribute="leading" secondItem="qRq-iP-B3q" secondAttribute="leading" id="XVp-5z-ep3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="nY2-Mt-cVs"/>
                     <connections>

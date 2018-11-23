@@ -172,8 +172,6 @@ class TableViewController: UITableViewController {
         let selectedCells = table.indexPathsForSelectedRows
         var selected = false
         if(selectedCells != nil){
-            print(selectedCells)
-            print(indexPath)
             for selectedCell in selectedCells! {
                 if(selectedCell == indexPath){
                     selected = true
