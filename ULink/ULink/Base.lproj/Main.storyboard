@@ -633,26 +633,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-f8-X7r">
+                                <rect key="frame" x="0.0" y="10" width="375" height="647"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pdO-1X-ATE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-TV-Meq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="gJo-DG-JXI">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="UWC-aV-Pgp">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="xaT-Hs-l0u"/>
+                                </constraints>
+                            </pageControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aoo-nk-iOe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="0.0" colorSpace="calibratedRGB"/>
                             </pickerView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15i-yP-YKU">
+                                <rect key="frame" x="0.0" y="127" width="375" height="540"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="15i-yP-YKU" firstAttribute="bottom" secondItem="cap-DE-Vng" secondAttribute="top" id="3sC-2H-SVI"/>
                             <constraint firstAttribute="trailing" secondItem="aoo-nk-iOe" secondAttribute="trailing" id="5Zp-5J-F7D"/>
+                            <constraint firstItem="15i-yP-YKU" firstAttribute="top" secondItem="aoo-nk-iOe" secondAttribute="bottom" constant="8" symbolic="YES" id="8YN-tg-MqT"/>
                             <constraint firstItem="aoo-nk-iOe" firstAttribute="top" secondItem="qRq-iP-B3q" secondAttribute="top" id="FSl-fk-znW"/>
+                            <constraint firstItem="CC6-f8-X7r" firstAttribute="leading" secondItem="aoo-nk-iOe" secondAttribute="leading" id="Nil-pf-WC3"/>
+                            <constraint firstItem="15i-yP-YKU" firstAttribute="leading" secondItem="CC6-f8-X7r" secondAttribute="leading" id="TVH-PR-PEh"/>
+                            <constraint firstItem="15i-yP-YKU" firstAttribute="top" secondItem="qRq-iP-B3q" secondAttribute="top" constant="127" id="Tpu-rl-LVo"/>
                             <constraint firstItem="aoo-nk-iOe" firstAttribute="leading" secondItem="qRq-iP-B3q" secondAttribute="leading" id="XVp-5z-ep3"/>
+                            <constraint firstItem="UWC-aV-Pgp" firstAttribute="centerX" secondItem="aoo-nk-iOe" secondAttribute="centerX" id="Zt5-fm-dpM"/>
+                            <constraint firstItem="cap-DE-Vng" firstAttribute="top" secondItem="UWC-aV-Pgp" secondAttribute="bottom" constant="20" id="ehd-SK-gMw"/>
+                            <constraint firstItem="15i-yP-YKU" firstAttribute="trailing" secondItem="CC6-f8-X7r" secondAttribute="trailing" id="etd-Nc-W0a"/>
+                            <constraint firstItem="cap-DE-Vng" firstAttribute="top" secondItem="CC6-f8-X7r" secondAttribute="bottom" constant="10" id="li9-E7-ZEE"/>
+                            <constraint firstItem="CC6-f8-X7r" firstAttribute="centerY" secondItem="qRq-iP-B3q" secondAttribute="centerY" id="sOS-D8-Fsn"/>
+                            <constraint firstItem="UWC-aV-Pgp" firstAttribute="centerX" secondItem="CC6-f8-X7r" secondAttribute="centerX" id="zO8-Ab-xPF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="nY2-Mt-cVs"/>
                     <connections>
+                        <outlet property="courseDetail" destination="tqy-q0-TFd" id="gZu-2B-7Ey"/>
+                        <outlet property="pageControl" destination="UWC-aV-Pgp" id="RnK-3z-Wnz"/>
                         <outlet property="picker" destination="aoo-nk-iOe" id="hjW-bO-zfM"/>
+                        <outlet property="popUpText" destination="ZBo-yr-sbJ" id="CUk-hL-XMo"/>
+                        <outlet property="scrollView" destination="15i-yP-YKU" id="Dp2-Gi-v9z"/>
+                        <outlet property="visualEffectView" destination="1lu-TV-Meq" id="RzC-oX-rBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBd-uO-lpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view alpha="0.80000001192092896" contentMode="scaleToFill" id="tqy-q0-TFd">
+                    <rect key="frame" x="0.0" y="0.0" width="308" height="180"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bof-FS-bzC">
+                            <rect key="frame" x="138" y="140" width="32" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="okay"/>
+                            <connections>
+                                <action selector="close:" destination="IBJ-5S-w6k" eventType="touchUpInside" id="1ya-h2-WAT"/>
+                                <action selector="close:" destination="B4a-c1-1Ds" eventType="touchUpInside" id="2xB-es-Kl2"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="sdfsdfdf" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZBo-yr-sbJ">
+                            <rect key="frame" x="16" y="49" width="276" height="83"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vov-LV-AAd">
+                            <rect key="frame" x="110" y="20" width="88" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="3402" y="36"/>
+            <point key="canvasLocation" x="3400.8000000000002" y="35.532233883058474"/>
         </scene>
     </scenes>
     <resources>
