@@ -50,6 +50,21 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return 1
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let tabController = tabBarController as! TabController
+        let users = tabController.dataDict["users"] as! [String: [String: Any]]
+        let friendsList = (users[tabController.UUID]?["friends"] as! [String]).sorted()
+        courseArray = users[friendsList[row]]?["courses"] as! [String]
+        updateData(controller: tabController)
+        
+        // pop off current scroll view
+        
+        // insert new scroll view
+        days = createDays()
+        setupDayScrollView(days: days)
+        view.bringSubview(toFront: pageControl)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return friendsNames.count
     }
@@ -239,7 +254,7 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func setupDayScrollView(days : [UIView]) {
-        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 100)
+        scrollView.frame = CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.height - 100)
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(days.count), height: view.frame.height - 100)
         scrollView.isPagingEnabled = true
         
