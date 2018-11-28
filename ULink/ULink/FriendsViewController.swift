@@ -15,9 +15,14 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("friends loaded")
         view.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1.0)
         picker.delegate = self
         picker.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("will appear")
         //picker.setValue(UIColor.white, forKeyPath: "textColor")
         let tabController = tabBarController as! TabController
         let users = tabController.dataDict["users"] as! [String: [String: Any]]
