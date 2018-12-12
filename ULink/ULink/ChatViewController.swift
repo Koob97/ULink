@@ -8,17 +8,20 @@
 
 import UIKit
 import Firebase
-class ChatViewController: UIViewController, UIScrollViewDelegate {
+class ChatViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     var messages = [Message]()
     var offset = 0
+    var friend = String()
+    var friendName = String()
     
+    @IBOutlet weak var friendLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.statusBarStyle = .default
+        friendLabel.text = friendName
         navigationItem.title = "Messages"
         sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         
@@ -26,6 +29,12 @@ class ChatViewController: UIViewController, UIScrollViewDelegate {
         
         textField.attributedPlaceholder = NSAttributedString(string:"enter message here ...", attributes: [NSForegroundColorAttributeName: UIColor.white])
         scrollView.contentSize = CGSize(width: view.frame.width, height: 1500)
+        view.bringSubview(toFront: sendButton)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func observeMessages(){
@@ -80,7 +89,7 @@ class ChatViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func msgIsForUser(user: String, msg: Message) -> Bool{
-        return (msg.from == user || msg.to == user) ? true:false
+        return ((msg.from == user && msg.to == friend) || (msg.to == user && msg.from == friend)) ? true:false
     }
     
     func sendAlert(){
@@ -103,7 +112,7 @@ class ChatViewController: UIViewController, UIScrollViewDelegate {
             let ref = Database.database().reference().child("messages")
             let timestamp = Int(Date().timeIntervalSince1970)
             let user = UserDefaults.standard.value(forKey: "currentUser")
-            let values = ["text": textField.text!, "from": user, "to": "anon", "time": timestamp]
+            let values = ["text": textField.text!, "from": user, "to": friend, "time": timestamp]
             let childRef = ref.childByAutoId()
             childRef.updateChildValues(values)
             

@@ -12,6 +12,7 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     @IBOutlet weak var picker: UIPickerView!
     var friendsNames = [String]()
+    var friendsList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,10 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         //picker.setValue(UIColor.white, forKeyPath: "textColor")
         let tabController = tabBarController as! TabController
         let users = tabController.dataDict["users"] as! [String: [String: Any]]
-        var friendsList = users[tabController.UUID]?["friends"]
+        friendsList = users[tabController.UUID]?["friends"] as! [String]
         if(friendsList != nil){
-            friendsList = (friendsList as! [String]).sorted()
-            for friend in friendsList as! [String]{
+            friendsList = (friendsList).sorted()
+            for friend in friendsList{
                 let username = users[friend]?["username"] as! String
                 friendsNames.append(username)
             }
@@ -40,7 +41,7 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         visualEffectView.effect = nil
         courseDetail.layer.cornerRadius = 5
         //end popup setup
-        courseArray = users[(friendsList as! [String])[0]]?["courses"] as! [String]
+        courseArray = users[(friendsList)[0]]?["courses"] as! [String]
         updateData(controller: tabController)
         scrollView.delegate = self
         days = createDays()
@@ -266,6 +267,17 @@ class FriendsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         for i in 0 ..< days.count {
             days[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height - 100)
             scrollView.addSubview(days[i])
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toChat" {
+            let destinationVC = segue.destination as! ChatViewController
+            print(friendsList)
+            print(friendsNames)
+            print(picker.selectedRow(inComponent: 0))
+            destinationVC.friend = friendsList[picker.selectedRow(inComponent: 0)]
+            destinationVC.friendName = friendsNames[picker.selectedRow(inComponent: 0)]
         }
     }
     
