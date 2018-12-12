@@ -17,6 +17,8 @@
 		7B852721215288B0006FE7CD /* day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B852720215288B0006FE7CD /* day.swift */; };
 		7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */; };
 		7BDF8DEE2149E1620000C23A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */; };
+		7BE536EB21C06F6E00698A1A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE536EA21C06F6E00698A1A /* ChatViewController.swift */; };
+		7BE536ED21C07C6E00698A1A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE536EC21C07C6E00698A1A /* Message.swift */; };
 		7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6400C214951D500C3EC2A /* AppDelegate.swift */; };
 		7BE6400F214951D500C3EC2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE6400E214951D500C3EC2A /* ViewController.swift */; };
 		7BE64012214951D500C3EC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE64010214951D500C3EC2A /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		7B852720215288B0006FE7CD /* day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day.swift; sourceTree = "<group>"; };
 		7BDF8DEB2149D84D0000C23A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7BDF8DED2149E1620000C23A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BE536EA21C06F6E00698A1A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7BE536EC21C07C6E00698A1A /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7BE64009214951D500C3EC2A /* ULink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ULink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE6400C214951D500C3EC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BE6400E214951D500C3EC2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		7BE64000214951D500C3EC2A = {
 			isa = PBXGroup;
 			children = (
+				7BE536EC21C07C6E00698A1A /* Message.swift */,
 				7BE6400B214951D500C3EC2A /* ULink */,
 				7BE6400A214951D500C3EC2A /* Products */,
 				C532D743D3F7E21692EF150D /* Pods */,
@@ -85,6 +90,7 @@
 				7BE6400E214951D500C3EC2A /* ViewController.swift */,
 				7B852716214EF40D006FE7CD /* RegisterViewController.swift */,
 				7BE64010214951D500C3EC2A /* Main.storyboard */,
+				7BE536EA21C06F6E00698A1A /* ChatViewController.swift */,
 				7B2284AD218E057A00FEB867 /* FriendsViewController.swift */,
 				7B85271E21528886006FE7CD /* day.xib */,
 				7B852720215288B0006FE7CD /* day.swift */,
@@ -258,12 +264,14 @@
 			files = (
 				7BE6400F214951D500C3EC2A /* ViewController.swift in Sources */,
 				7B85271B215060B9006FE7CD /* MyCoursesViewController.swift in Sources */,
+				7BE536EB21C06F6E00698A1A /* ChatViewController.swift in Sources */,
 				7B852721215288B0006FE7CD /* day.swift in Sources */,
 				7BE6400D214951D500C3EC2A /* AppDelegate.swift in Sources */,
 				7BDF8DEC2149D84D0000C23A /* HomeViewController.swift in Sources */,
 				7B852719214F159F006FE7CD /* TableViewController.swift in Sources */,
 				7B2284AE218E057A00FEB867 /* FriendsViewController.swift in Sources */,
 				7B85271D21528806006FE7CD /* ScheduleViewController.swift in Sources */,
+				7BE536ED21C07C6E00698A1A /* Message.swift in Sources */,
 				7B65F88B2187A3A700854E56 /* TabController.swift in Sources */,
 				7B852717214EF40D006FE7CD /* RegisterViewController.swift in Sources */,
 			);

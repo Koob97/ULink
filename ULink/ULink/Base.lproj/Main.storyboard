@@ -539,6 +539,16 @@
                                 <color key="textColor" red="0.99519230769230771" green="1" blue="0.99038461538461542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqk-6n-Hqj">
+                                <rect key="frame" x="42" y="394" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="to chat">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4g5-LS-OsH" kind="show" id="AIX-bC-DNN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -581,6 +591,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tL-8Y-Onf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1736.8" y="36.431784107946029"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3rl-cx-cFh">
+            <objects>
+                <navigationController id="4g5-LS-OsH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FjV-Gm-vo5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Osc-eM-HPc" kind="relationship" relationship="rootViewController" id="p4p-Zq-szo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BPk-H9-7YD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1737" y="-1072"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="3fq-cz-8i2">
+            <objects>
+                <viewController id="Osc-eM-HPc" customClass="ChatViewController" customModule="ULink" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mYd-14-0HE"/>
+                        <viewControllerLayoutGuide type="bottom" id="DnP-T0-TtN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d04-dX-WT5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter message ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IHj-KU-ZVL">
+                                <rect key="frame" x="16" y="616" width="278" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="1yO-Fc-LTe"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTN-m1-mmz">
+                                <rect key="frame" x="323" y="616" width="36" height="31"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.064089004351195467" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEe-a1-iLW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="533"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4a-57-TTY">
+                                <rect key="frame" x="0.0" y="596" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="xvi-PA-gOf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZEe-a1-iLW" firstAttribute="top" secondItem="mYd-14-0HE" secondAttribute="bottom" id="0eE-W1-qwk"/>
+                            <constraint firstItem="IHj-KU-ZVL" firstAttribute="top" secondItem="QTN-m1-mmz" secondAttribute="top" id="2iL-v9-Pov"/>
+                            <constraint firstItem="N4a-57-TTY" firstAttribute="top" secondItem="mYd-14-0HE" secondAttribute="bottom" constant="532" id="7M8-M8-MPz"/>
+                            <constraint firstItem="QTN-m1-mmz" firstAttribute="trailing" secondItem="d04-dX-WT5" secondAttribute="trailingMargin" id="EUk-c5-H1y"/>
+                            <constraint firstItem="IHj-KU-ZVL" firstAttribute="leading" secondItem="d04-dX-WT5" secondAttribute="leadingMargin" id="Gay-30-zXd"/>
+                            <constraint firstItem="IHj-KU-ZVL" firstAttribute="bottom" secondItem="QTN-m1-mmz" secondAttribute="bottom" id="KeG-bT-OBC"/>
+                            <constraint firstItem="N4a-57-TTY" firstAttribute="leading" secondItem="d04-dX-WT5" secondAttribute="leading" id="RvY-BY-gbP"/>
+                            <constraint firstItem="ZEe-a1-iLW" firstAttribute="leading" secondItem="d04-dX-WT5" secondAttribute="leading" id="Ryf-dg-gzc"/>
+                            <constraint firstItem="ZEe-a1-iLW" firstAttribute="bottom" secondItem="N4a-57-TTY" secondAttribute="bottom" id="VNI-8i-Q4q"/>
+                            <constraint firstAttribute="trailing" secondItem="ZEe-a1-iLW" secondAttribute="trailing" id="cVz-M0-4Ki"/>
+                            <constraint firstAttribute="trailing" secondItem="N4a-57-TTY" secondAttribute="trailing" id="dvQ-vF-Lkk"/>
+                            <constraint firstAttribute="bottom" secondItem="QTN-m1-mmz" secondAttribute="bottom" constant="20" symbolic="YES" id="xXO-T9-Qz8"/>
+                            <constraint firstItem="QTN-m1-mmz" firstAttribute="top" secondItem="N4a-57-TTY" secondAttribute="bottom" constant="19" id="yga-OK-eea"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iCs-Qe-bzG"/>
+                    <connections>
+                        <outlet property="scrollView" destination="ZEe-a1-iLW" id="THh-C3-sUy"/>
+                        <outlet property="sendButton" destination="QTN-m1-mmz" id="XxE-9V-0SP"/>
+                        <outlet property="textField" destination="IHj-KU-ZVL" id="aNM-Uu-lg0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qqd-Td-fGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512.8000000000002" y="-1073.6131934032985"/>
         </scene>
         <!--Course Listings-->
         <scene sceneID="Rry-sD-Eu7">
@@ -750,8 +842,8 @@
         <image name="transparentLink" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hU2-uF-EqV"/>
         <segue reference="dOn-FF-jeM"/>
+        <segue reference="hU2-uF-EqV"/>
         <segue reference="Igv-kB-xaQ"/>
     </inferredMetricsTieBreakers>
 </document>

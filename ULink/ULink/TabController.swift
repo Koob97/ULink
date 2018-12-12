@@ -19,6 +19,8 @@ class TabController: UITabBarController {
     var username: String! // username to be referenced in the views
     
     override func viewDidLoad() {
+        //UserDefaults.standard.set(false, forKey: "isLoggedIn")
+        //UserDefaults.standard.synchronize()
         UIApplication.shared.statusBarStyle = .lightContent
         view.backgroundColor = UIColor(red: 0.1216, green: 0.1216, blue: 0.1216, alpha: 1.0)
         UUID = UserDefaults.standard.value(forKey: "currentUser") as! String
